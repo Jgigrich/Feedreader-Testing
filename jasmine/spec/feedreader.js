@@ -31,7 +31,7 @@ $(function() {
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
-        it('all feeds have a URL', function() {
+        it('have URLs', function() {
           let allHaveUrls = true;
           for(feed of allFeeds) {
             if(typeof feed.url === 'undefined' || feed.url === '') {
@@ -46,7 +46,7 @@ $(function() {
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
-         it('all feeds have a name', function() {
+         it('have names', function() {
            let allHaveNames = true;
            for(feed of allFeeds) {
              if(typeof feed.name === 'undefined' || feed.name === '') {
@@ -66,8 +66,8 @@ $(function() {
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
-        it('menu hidden by default', function() {
-
+        it('hidden by default', function() {
+          expect(document.querySelector('body').classList.contains('menu-hidden')).toBe(true);
         });
 
          /* TODO: Write a test that ensures the menu changes
@@ -91,5 +91,5 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
-    };
+    });
 }());
