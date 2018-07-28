@@ -10,7 +10,7 @@
  */
 $(function() {
 
-    /* 
+    /*
      * This suite is all about the RSS feeds definitions.
     */
     describe('RSS Feeds', function() {
@@ -97,16 +97,20 @@ $(function() {
          * by the loadFeed function that the content actually changes.
         */
         const feed = document.querySelector('.feed');
-        let   feed1;
+        let   feed1, feed2;
 
         beforeEach(function(done) {
-          loadFeed(0);
-          feed1 = feed.innerText;
-          loadFeed(1, done);
+          loadFeed(0, function(){
+            feed1 = feed.innerText;
+          });
+          loadFeed(1, function(){
+            feed2 = feed.innerText;
+            done();
+          });
         });
 
         it('changes content', function(done) {
-          expect(feed.innerText).not.toBe(feed1);
+          expect(feed2).not.toBe(feed1);
           done();
         });
     });
