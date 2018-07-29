@@ -87,7 +87,7 @@ $(function() {
         });
 
         it('has at least one entry', function(done) {
-          let numOfEntries = $('.feed').find('.entry').length;
+          let numOfEntries = $('.feed .entry').length;
           expect(numOfEntries).toBeGreaterThan(0);
           done();
         });
