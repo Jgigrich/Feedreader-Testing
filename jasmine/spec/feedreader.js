@@ -86,10 +86,9 @@ $(function() {
           loadFeed(0, done);
         });
 
-        it('has at least one entry', function(done) {
+        it('has at least one entry', function() {
           let numOfEntries = $('.feed .entry').length;
           expect(numOfEntries).toBeGreaterThan(0);
-          done();
         });
     });
 
