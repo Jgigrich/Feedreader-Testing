@@ -9,7 +9,6 @@
  * to ensure they don't run until the DOM is ready.
  */
 $(function() {
-
     /*
      * This suite is all about the RSS feeds definitions.
     */
@@ -102,16 +101,15 @@ $(function() {
         beforeEach(function(done) {
           loadFeed(0, function(){
             feed1 = feed.innerText;
-          });
-          loadFeed(1, function(){
-            feed2 = feed.innerText;
-            done();
+            loadFeed(1, function(){
+              feed2 = feed.innerText;
+              done();
+            });
           });
         });
 
-        it('changes content', function(done) {
+        it('changes content', function() {
           expect(feed2).not.toBe(feed1);
-          done();
         });
     });
 }());
