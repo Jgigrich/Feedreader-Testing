@@ -28,7 +28,7 @@ $(function() {
          */
         it('have URLs', function() {
           let allHaveUrls = true;
-          for(feed of allFeeds) {
+          for(let feed of allFeeds) {
             if(typeof feed.url === 'undefined' || feed.url === '') {
               allHaveUrls = false;
             }
@@ -42,7 +42,7 @@ $(function() {
          */
         it('have names', function() {
           let allHaveNames = true;
-          for(feed of allFeeds) {
+          for(let feed of allFeeds) {
             if(typeof feed.name === 'undefined' || feed.name === '') {
               allHaveNames = false;
             }
